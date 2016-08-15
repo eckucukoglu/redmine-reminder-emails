@@ -6,4 +6,13 @@ Redmine::Plugin.register :reminderemails do
   author_url 'http://eckucukoglu.com'
   version '0.0.1'
   requires_redmine version_or_higher: '3.3.0'
+
+  settings({
+     :partial => 'settings/reminderemails',
+     :default => {
+       'rake_path' => 'rake',
+       'script_path' => 'redmine_due_reminder.sh'
+      }
+  })
+
 end
