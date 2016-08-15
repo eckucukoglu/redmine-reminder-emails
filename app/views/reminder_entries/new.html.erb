@@ -1,0 +1,16 @@
+<p>
+<%= link_to "Back", project_reminder_entries_path %> |
+</p>
+
+<h2>New reminder</h2>
+
+<table>
+<%= form_for :reminder, url: project_reminder_entries_path do |f| %>
+  <tr><p><td><%= f.label "Users: " %></td><td> <%= select :reminder, :users, options_for_select(@useroptions), {}, {:multiple => true, :required => false} %></td></p></tr>
+  <tr><p><td><%= f.label "Tracker: " %></td><td> <%= select :reminder, :tracker, options_for_select(@trackeroptions), {:include_blank => 'Select One'}, {:multiple => false, :required => false} %></td></p></tr>
+  <tr><p><td><%= f.label "Environment: " %></td><td> <%= select :reminder, :env, options_for_select(@envoptions), {:include_blank => 'Select One'}, {:multiple => false, :required => true} %></td></p></tr>
+  <tr><p><td><%= f.label "Days: " %></td><td> <%= f.text_field :days, :type => "number", :required => true %> </td></p></tr>
+
+  <tr><td><%= f.submit 'Add reminder' %></td><td></td></tr>
+<% end %>
+</table>
