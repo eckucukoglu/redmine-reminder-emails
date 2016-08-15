@@ -15,4 +15,9 @@ Redmine::Plugin.register :reminderemails do
       }
   })
 
+  menu :project_menu, :reminder_entries, { :controller => 'reminder_entries', :action => 'index' }, :caption => 'Reminders', :before => :settings, :param => :project_id
+
+  project_module :reminder_entries do
+    permission :manage_reminder_entries, :reminder_entries => [:index, :create, :new, :edit, :show, :update, :destroy], :require => :member
+  end
 end
