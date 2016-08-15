@@ -1,2 +1,4 @@
-# Plugin's routes
-# See: http://guides.rubyonrails.org/routing.html
+resources :project do
+  resources :reminder_entries do
+  end
+end
