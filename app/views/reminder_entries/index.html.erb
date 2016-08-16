@@ -10,11 +10,10 @@
   <% @reminder_entries.each do |reminder_entry| %>
     <tr>
       <li>
-        Tracker: <%= Tracker.find_by_id(reminder_entry.tracker_id).name %></br>
+        Tracker: <%= getReminderTrackerName(reminder_entry.tracker_id) %></br>
         Days: <%= reminder_entry.days %></br>
         Users: <%= getReminderUserNames(reminder_entry.id) %></br>
         Environment: <%= reminder_entry.env %></br>
-        <%= link_to "Edit", edit_project_reminder_entry_path(:id => reminder_entry.id), method: :get %> |
         <%= link_to "Delete", project_reminder_entry_path(:id => reminder_entry.id), method: :delete, data: { confirm: 'Are you sure?' } %>
       </li>
     </tr>
