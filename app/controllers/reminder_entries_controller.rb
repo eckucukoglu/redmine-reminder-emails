@@ -22,8 +22,8 @@ class ReminderEntriesController < ApplicationController
     end
 
     @envoptions = Array.new
-    @envoptions.push(["Development", "development"])
     @envoptions.push(["Production", "production"])
+    @envoptions.push(["Development", "development"])
     @envoptions.push(["Test", "test"])
 
     @project_tracker_ids = @project.trackers.collect{|u| u.id}
