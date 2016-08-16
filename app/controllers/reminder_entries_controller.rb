@@ -61,7 +61,7 @@ class ReminderEntriesController < ApplicationController
         reminder_user.save
       end
       flash[:notice] = "Reminder set."
-      addReminderToScript(@reminder_entry)
+      forceUpdateScript
       redirect_to project_reminder_entries_path(:project_id => @project.id)
     else
       flash[:error] = "Reminder couldn't set! Please check the form."
@@ -82,6 +82,7 @@ class ReminderEntriesController < ApplicationController
       end
 
       flash[:notice] = "Reminder removed."
+      forceUpdateScript
       redirect_to project_reminder_entries_path
     else
       flash[:error] = "Reminder couldn't be removed!"
@@ -90,10 +91,47 @@ class ReminderEntriesController < ApplicationController
   end
 
   private
-  def addReminderToScript(reminder_entry)
-    # Setting['plugin_reminderemails']['rake_path']
-    # Setting['plugin_reminderemails']['script_path']
-    # Rails.root.to_s
+  def forceUpdateScript
+    reminder_script = File.open(Setting['plugin_reminderemails']['script_path'], "w")
+    File.chmod(0775, Setting['plugin_reminderemails']['script_path'])
+    reminder_script.write(generateScriptContent)
+    reminder_script.close
+  end
+
+  def generateScriptContent
+    content = "#!/bin/bash\n"
+    content << "cd " + Rails.root.to_s + "\n"
+    rake_content = Setting['plugin_reminderemails']['rake_path'] + " redmine:send_reminders "
+
+    reminder_entries = ReminderEntry.all
+    reminder_entries.each do |reminder_entry|
+      content << rake_content
+      content << generateReminderOptions(reminder_entry)
+      content << "\n"
+    end
+
+    return content
+  end
+
+  def generateReminderOptions(reminder_entry)
+    options = "project=\"" + reminder_entry.project_id.to_s + "\" "
+    options << "days=\"" + reminder_entry.days.to_s + "\" "
+    options << "RAILS_ENV=\"" + reminder_entry.env + "\" "
+    unless reminder_entry.tracker_id == 0
+      options << "tracker=\"" + reminder_entry.tracker_id.to_s + "\" "
+    end
+
+    reminder_users = ReminderUser.where(:reminder_entry_id => reminder_entry.id)
+    unless reminder_users.length == 0
+      options << "users=\""
+      reminder_users.each do |reminder_user|
+        options << reminder_user.user_id.to_s + ","
+      end
+      options = options[0...-1]
+      options << "\""
+    end
+
+    return options
   end
 
 end
