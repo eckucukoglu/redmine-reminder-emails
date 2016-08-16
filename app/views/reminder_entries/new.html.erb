@@ -5,11 +5,38 @@
 <h2>New reminder</h2>
 
 <table>
-<%= form_for :reminder, url: project_reminder_entries_path do |f| %>
-  <tr><p><td><%= f.label "Users: " %></td><td> <%= select :reminder, :users, options_for_select(@useroptions), {}, {:multiple => true, :required => false} %></td></p></tr>
-  <tr><p><td><%= f.label "Tracker: " %></td><td> <%= select :reminder, :tracker, options_for_select(@trackeroptions), {:include_blank => "All trackers"}, {:multiple => false, :required => false} %></td></p></tr>
-  <tr><p><td><%= f.label "Environment: " %></td><td> <%= select :reminder, :env, options_for_select(@envoptions), {:include_blank => 'Select One'}, {:multiple => false, :required => true} %></td></p></tr>
-  <tr><p><td><%= f.label "Days: " %></td><td> <%= f.text_field :days, :type => "number", :required => true, :min => 1 %> </td></p></tr>
-  <tr><td><%= f.submit 'Add reminder' %></td><td></td></tr>
-<% end %>
+  <%= form_for :reminder, url: project_reminder_entries_path do |f| %>
+    <tr>
+      <th><%= f.label "Tracker: " %></th>
+      <td><%= select :reminder, :tracker, options_for_select(@trackeroptions), {:include_blank => "All trackers"}, {:multiple => false, :required => false} %></td>
+    </tr>
+
+    <tr>
+      <th><%= f.label "Days: " %></th>
+      <td><%= f.text_field :days, :type => "number", :required => true, :min => 1 %></td>
+    </tr>
+
+    <tr>
+      <th><%= f.label "Environment: " %></th>
+      <td><%= select :reminder, :env, options_for_select(@envoptions), {:include_blank => false}, {:multiple => false, :required => false} %></td>
+    </tr>
+
+    <tr>
+      <th><%= f.label "Users: " %></th>
+      <td><%= select :reminder, :users, options_for_select(@useroptions), {}, {:multiple => true, :required => false} %></td>
+    </tr>
+
+    <tr>
+      <th><%= f.submit 'Add reminder' %></th>
+    </tr>
+  <% end %>
 </table>
+
+</br>
+This plugin offers a task that sends reminder emails about assigned and active issues that are past due or due in the next specified number of days.
+</br></br>
+Available options:
+<li>Tracker: id of tracker (defaults to all trackers)</li>
+<li>Days: number of days to remind about</li>
+<li>Environment: defaults to production</li>
+<li>Users: list of users who should be reminded (defaults to every user)</li>
