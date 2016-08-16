@@ -6,17 +6,25 @@
   <p>There are not any reminders for this project.</p>
 <% else %>
   <p>These are the current reminders:</p>
-  <table>
-  <% @reminder_entries.each do |reminder_entry| %>
-    <tr>
-      <li>
-        Tracker: <%= getReminderTrackerName(reminder_entry.tracker_id) %></br>
-        Days: <%= reminder_entry.days %></br>
-        Users: <%= getReminderUserNames(reminder_entry.id) %></br>
-        Environment: <%= reminder_entry.env %></br>
-        <%= link_to "Delete", project_reminder_entry_path(:id => reminder_entry.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-      </li>
-    </tr>
-  <% end %>
-</table>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Tracker</th>
+        <th>Days</th>
+        <th>Environment</th>
+        <th>Users</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <% @reminder_entries.each do |reminder_entry| %>
+      <tr>
+        <td> <%= getReminderTrackerName(reminder_entry.tracker_id) %> </td>
+        <td> <%= reminder_entry.days %> </td>
+        <td> <%= reminder_entry.env %> </td>
+        <td> <%= getReminderUserNames(reminder_entry.id) %> </td>
+        <td> <%= link_to "Delete", project_reminder_entry_path(:id => reminder_entry.id), method: :delete, data: { confirm: 'Are you sure?' } %> </td>
+      </tr>
+    <% end %>
+  </table>
 <% end %>
