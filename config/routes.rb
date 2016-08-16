@@ -1,4 +1,3 @@
-resources :project do
-  resources :reminder_entries do
-  end
+resources :projects do
+  resources :reminder_entries 
 end
