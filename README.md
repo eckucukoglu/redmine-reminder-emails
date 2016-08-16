@@ -9,5 +9,9 @@ Available options:
  - Users: list of users who should be reminded (defaults to every user)
 
 Moreover;
- - rake executive path and
- - redmine script path (created unless exists) should be set from plugin configurations.
+ - rake executive path (in case of rvm) and
+ - reminder script path (created unless exists) should be set from plugin configurations.
+ - reminder script also should be added to [crontab].
+
+
+   [crontab]: <http://www.cyberciti.biz/faq/how-do-i-add-jobs-to-cron-under-linux-or-unix-oses/>
