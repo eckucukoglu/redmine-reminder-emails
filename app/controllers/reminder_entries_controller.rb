@@ -60,10 +60,11 @@ class ReminderEntriesController < ApplicationController
       @reminder_users.each do |reminder_user|
         reminder_user.save
       end
-      flash[:success] = "Reminder set."
+      flash[:notice] = "Reminder set."
+      addReminderToScript(@reminder_entry)
       redirect_to project_reminder_entries_path(:project_id => @project.id)
     else
-      flash.now[:alert] = "Reminder couldn't set! Please check the form."
+      flash[:error] = "Reminder couldn't set! Please check the form."
       Rails.logger.info(@reminder_entry.errors.inspect)
       render new_project_reminder_entry_path(:project_id => @project.id)
     end
@@ -80,12 +81,19 @@ class ReminderEntriesController < ApplicationController
         reminder_user.destroy
       end
 
-      flash[:success] = "Reminder removed."
+      flash[:notice] = "Reminder removed."
       redirect_to project_reminder_entries_path
     else
-      flash.now[:alert] = "Reminder couldn't be removed!"
+      flash[:error] = "Reminder couldn't be removed!"
       render project_reminder_entries_path
     end
+  end
+
+  private
+  def addReminderToScript(reminder_entry)
+    # Setting['plugin_reminderemails']['rake_path']
+    # Setting['plugin_reminderemails']['script_path']
+    # Rails.root.to_s
   end
 
 end
