@@ -90,6 +90,32 @@ class ReminderEntriesController < ApplicationController
     end
   end
 
+  def send_now
+    @project = Project.find(params[:project_id])
+    @reminder_entry = ReminderEntry.find(params[:reminder_entry_id])
+
+    options = {}
+    options[:project] = @project.id
+    options[:tracker] = @reminder_entry.tracker_id.to_i if @reminder_entry.tracker_id != 0
+    options[:days] = @reminder_entry.days.to_i
+    options[:users] = Array.new
+
+    @reminder_users = ReminderUser.where(:reminder_entry_id => @reminder_entry.id)
+    unless @reminder_users.length == 0
+      @reminder_users.each do |reminder_user|
+        options[:users].push(reminder_user.user_id)
+      end
+    end
+
+    if send_reminders(options)
+      flash[:notice] = "Mail sent."
+      redirect_to project_reminder_entries_path(:project_id => @project.id)
+    else
+      flash[:error] = "Mail couldn't send!"
+      render project_reminder_entries_path
+    end
+  end
+
   private
   def forceUpdateScript
     reminder_script = File.open(Setting['plugin_reminderemails']['script_path'], "w")
@@ -132,6 +158,14 @@ class ReminderEntriesController < ApplicationController
     end
 
     return options
+  end
+
+  def send_reminders(options)
+    Mailer.with_synched_deliveries do
+      Mailer.reminders(options)
+    end
+
+    return true
   end
 
 end

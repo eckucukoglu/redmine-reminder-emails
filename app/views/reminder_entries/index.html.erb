@@ -13,7 +13,7 @@
         <th>Days</th>
         <th>Environment</th>
         <th>Users</th>
-        <th></th>
+        <th>Actions</th>
       </tr>
     </thead>
 
@@ -23,7 +23,10 @@
         <td> <%= reminder_entry.days %> </td>
         <td> <%= reminder_entry.env %> </td>
         <td> <%= getReminderUserNames(reminder_entry.id) %> </td>
-        <td> <%= link_to "Delete", project_reminder_entry_path(:id => reminder_entry.id), method: :delete, data: { confirm: 'Are you sure?' } %> </td>
+        <td>
+          <%= button_to "Send now", project_reminder_entry_send_path(:reminder_entry_id => reminder_entry.id) %>
+          <%= button_to "Delete", project_reminder_entry_path(:id => reminder_entry.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </table>
