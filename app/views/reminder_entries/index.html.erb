@@ -1,19 +1,19 @@
-<h2>Reminder e-mails</h2>
+<h2><%= l(:reminder_emails)%></h2>
 
-<%= link_to "New Reminder", new_project_reminder_entry_path %>
+<%= link_to l(:reminder_new), new_project_reminder_entry_path %>
 
 <% if @reminder_entries.blank? %>
-  <p>There are not any reminders for this project.</p>
+  <p><%= l(:reminder_not_exist) %></p>
 <% else %>
-  <p>These are the current reminders:</p>
+  <p><%= l(:reminder_list) %></p>
   <table border="1">
     <thead>
       <tr>
-        <th>Tracker</th>
-        <th>Days</th>
-        <th>Environment</th>
-        <th>Users</th>
-        <th>Actions</th>
+        <th><%= l(:reminder_tracker) %></th>
+        <th><%= l(:reminder_days) %></th>
+        <th><%= l(:reminder_environment) %></th>
+        <th><%= l(:reminder_users) %></th>
+        <th><%= l(:reminder_actions) %></th>
       </tr>
     </thead>
 
@@ -24,8 +24,8 @@
         <td> <%= reminder_entry.env %> </td>
         <td> <%= getReminderUserNames(reminder_entry.id) %> </td>
         <td>
-          <%= button_to "Send now", project_reminder_entry_send_path(:reminder_entry_id => reminder_entry.id) %>
-          <%= button_to "Delete", project_reminder_entry_path(:id => reminder_entry.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= button_to l(:button_send_now), project_reminder_entry_send_path(:reminder_entry_id => reminder_entry.id) %>
+          <%= button_to l(:button_delete), project_reminder_entry_path(:id => reminder_entry.id), method: :delete, data: { confirm: l(:warning_delete) } %>
         </td>
       </tr>
     <% end %>

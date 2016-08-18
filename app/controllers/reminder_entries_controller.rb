@@ -60,11 +60,11 @@ class ReminderEntriesController < ApplicationController
       @reminder_users.each do |reminder_user|
         reminder_user.save
       end
-      flash[:notice] = "Reminder set."
+      flash[:notice] = l(:reminder_set)
       forceUpdateScript
       redirect_to project_reminder_entries_path(:project_id => @project.id)
     else
-      flash[:error] = "Reminder couldn't set! Please check the form."
+      flash[:error] = l(:reminder_not_set)
       Rails.logger.info(@reminder_entry.errors.inspect)
       render new_project_reminder_entry_path(:project_id => @project.id)
     end
@@ -81,11 +81,11 @@ class ReminderEntriesController < ApplicationController
         reminder_user.destroy
       end
 
-      flash[:notice] = "Reminder removed."
+      flash[:notice] = l(:reminder_removed)
       forceUpdateScript
       redirect_to project_reminder_entries_path
     else
-      flash[:error] = "Reminder couldn't be removed!"
+      flash[:error] = l(:reminder_not_removed)
       render project_reminder_entries_path
     end
   end
@@ -108,10 +108,10 @@ class ReminderEntriesController < ApplicationController
     end
 
     if send_reminders(options)
-      flash[:notice] = "Mail sent."
+      flash[:notice] = l(:mail_sent)
       redirect_to project_reminder_entries_path(:project_id => @project.id)
     else
-      flash[:error] = "Mail couldn't send!"
+      flash[:error] = l(:mail_not_send)
       render project_reminder_entries_path
     end
   end

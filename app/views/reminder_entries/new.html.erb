@@ -1,42 +1,40 @@
 <p>
-<%= link_to "Back", project_reminder_entries_path %>
+<%= link_to l(:link_back), project_reminder_entries_path %>
 </p>
 
-<h2>New reminder</h2>
+<h2><%= l(:reminder_new) %></h2>
 
 <table>
   <%= form_for :reminder, url: project_reminder_entries_path do |f| %>
     <tr>
-      <th><%= f.label "Tracker: " %></th>
-      <td><%= select :reminder, :tracker, options_for_select(@trackeroptions), {:include_blank => "All trackers"}, {:multiple => false, :required => false} %></td>
+      <th><%= f.label l(:reminder_tracker) %></th>
+      <td><%= select :reminder, :tracker, options_for_select(@trackeroptions), {:include_blank => l(:tracker_all)}, {:multiple => false, :required => false} %></td>
     </tr>
 
     <tr>
-      <th><%= f.label "Days: " %></th>
+      <th><%= f.label l(:reminder_days) %></th>
       <td><%= f.text_field :days, :type => "number", :required => true, :min => 1 %></td>
     </tr>
 
     <tr>
-      <th><%= f.label "Environment: " %></th>
+      <th><%= f.label l(:reminder_environment) %></th>
       <td><%= select :reminder, :env, options_for_select(@envoptions), {:include_blank => false}, {:multiple => false, :required => false} %></td>
     </tr>
 
     <tr>
-      <th><%= f.label "Users: " %></th>
+      <th><%= f.label l(:reminder_users) %></th>
       <td><%= select :reminder, :users, options_for_select(@useroptions), {}, {:multiple => true, :required => false} %></td>
     </tr>
 
     <tr>
-      <th><%= f.submit 'Add reminder' %></th>
+      <th><%= f.submit l(:reminder_add) %></th>
     </tr>
   <% end %>
 </table>
 
-</br>
-This plugin offers a task that sends reminder emails about assigned and active issues that are past due or due in the next specified number of days.
-</br></br>
-Available options:
-<li>Tracker: tracker to watch (defaults to all trackers)</li>
-<li>Days: number of days to remind about</li>
-<li>Environment: defaults to production</li>
-<li>Users: list of users that are reminded (defaults to every user)</li>
+</br> <%= l(:reminder_description) %> </br></br>
+<%= l(:reminder_options) %>
+<li><%= l(:reminder_option_tracker) %></li>
+<li><%= l(:reminder_option_days) %></li>
+<li><%= l(:reminder_option_environment) %></li>
+<li><%= l(:reminder_option_users) %></li>

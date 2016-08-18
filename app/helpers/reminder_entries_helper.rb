@@ -14,7 +14,7 @@ module ReminderEntriesHelper
     end
 
     if reminderUserNames.length == 0
-      return "Everyone"
+      return l(:user_all)
     end
 
     return reminderUserNames
@@ -22,7 +22,7 @@ module ReminderEntriesHelper
 
   def getReminderTrackerName(tracker_id)
     if tracker_id == 0
-      return "All trackers"
+      return l(:tracker_all)
     end
 
     tracker = Tracker.find_by_id(tracker_id)
@@ -32,9 +32,5 @@ module ReminderEntriesHelper
       return ("#" + tracker_id.to_s)
     end
   end
-
-
-
-
 
 end

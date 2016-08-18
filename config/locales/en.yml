@@ -1,3 +1,45 @@
-# English strings go here for Rails i18n
+# English strings sorted alphabetically wrt first letter.
 en:
-  # my_label: "My label"
+  button_delete: "Delete"
+  button_send_now: "Send now"
+
+  link_back: "Back"
+
+  mail_sent: "Mail sent."
+  mail_not_send: "Mail couldn't send!"
+
+  reminder_menu_title: "Reminders"
+  reminder_emails: "Reminder e-mails"
+  reminder_new: "New Reminder"
+  reminder_set: "Reminder set."
+  reminder_not_set: "Reminder couldn't set! Please check the form."
+  reminder_removed: "Reminder removed."
+  reminder_not_removed: "Reminder couldn't be removed!"
+  reminder_not_exist: "There are not any reminders for this project."
+  reminder_list: "These are the current reminders:"
+  reminder_add: "Add reminder"
+  reminder_settings: "Plugin Settings"
+  reminder_description: "This plugin offers a task that sends reminder emails
+    about assigned and active issues that are past due or due in the next
+    specified number of days."
+
+  reminder_options: "Available options:"
+  reminder_option_tracker: "Tracker: tracker to watch (defaults to all trackers)"
+  reminder_option_days: "Days: number of days to remind about"
+  reminder_option_environment: "Environment: defaults to production"
+  reminder_option_users: "Users: list of users that are reminded (defaults to every user)"
+
+  reminder_tracker: "Tracker"
+  reminder_days: "Days"
+  reminder_environment: "Environment"
+  reminder_users: "Users"
+  reminder_actions: "Actions"
+
+  settings_rake_path: "Rake path:"
+  settings_script_path: "Reminder script path:"
+
+  user_all: "Everyone"
+
+  tracker_all: "All trackers"
+
+  warning_delete: "Are you sure?"
