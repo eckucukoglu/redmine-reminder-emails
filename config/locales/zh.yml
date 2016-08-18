@@ -1,0 +1,43 @@
+# Simplified Chinese strings sorted alphabetically wrt first letter.
+zh:
+  button_delete: "删除"
+  button_send_now: "立即发送"
+
+  link_back: "返回"
+
+  mail_sent: "邮件已发送。"
+  mail_not_send: "邮件未发送！"
+
+  reminder_menu_title: "提醒配置"
+  reminder_emails: "提醒E-mails"
+  reminder_new: "新增提醒配置"
+  reminder_set: "提醒配置已保存。"
+  reminder_not_set: "提醒配置信息不能保存！请检查。"
+  reminder_removed: "提醒配置已删除。 "
+  reminder_not_removed: "提醒配置不能删除！"
+  reminder_not_exist: "当前项目没有提醒配置。"
+  reminder_list: "当前提醒配置如下："
+  reminder_add: "添加提醒"
+  reminder_settings: "设置"
+  reminder_description: "该插件通过电子邮件方式，向具体用户发送指定日期内，已分配的问题列表的提醒功能。"
+
+  reminder_options: "选项："
+  reminder_option_tracker: "跟踪：需要提供提醒的跟踪类型（默认为所有跟踪类型）"
+  reminder_option_days: "天数：适用于提醒的天数"
+  reminder_option_environment: "环境：默认设置为Production"
+  reminder_option_users: "用户：提醒的用户清单（默认为所有用户）"
+
+  reminder_tracker: "跟踪"
+  reminder_days: "天数"
+  reminder_environment: "环境"
+  reminder_users: "用户"
+  reminder_actions: "操作"
+
+  settings_rake_path: "Rake路径："
+  settings_script_path: "提醒脚本保存路径："
+
+  user_all: "所有人"
+
+  tracker_all: "全部跟踪类型"
+
+  warning_delete: "确定？"
