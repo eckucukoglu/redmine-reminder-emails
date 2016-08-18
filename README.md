@@ -50,11 +50,11 @@ $ /etc/init.d/cron restart
 
 ## Screenshots
 
-![Plugin configuration](https://github.com/eckucukoglu/redmine-reminder-emails/blob/master/assets/images/plugin_configuration.png?raw=true)
+![Plugin configuration](https://github.com/eckucukoglu/redmine-reminder-emails/blob/master/assets/images/screenshots/plugin_configuration.png?raw=true)
 
-![Reminder list](https://github.com/eckucukoglu/redmine-reminder-emails/blob/master/assets/images/reminder_list.png?raw=true)
+![Reminder list](https://github.com/eckucukoglu/redmine-reminder-emails/blob/master/assets/images/screenshots/reminder_list.png?raw=true)
 
-![New reminder](https://github.com/eckucukoglu/redmine-reminder-emails/blob/master/assets/images/new_reminder.png?raw=true)
+![New reminder](https://github.com/eckucukoglu/redmine-reminder-emails/blob/master/assets/images/screenshots/new_reminder.png?raw=true)
 
 ## Uninstall
 
