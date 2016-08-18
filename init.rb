@@ -13,7 +13,7 @@ Redmine::Plugin.register :reminderemails do
      :partial => 'settings/reminderemails',
      :default => {
        'rake_path' => 'rake',
-       'script_path' => 'redmine_due_reminder.sh'
+       'script_path' => 'script/redmine_due_reminder.sh'
       }
   })
 
