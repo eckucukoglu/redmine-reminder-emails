@@ -21,11 +21,6 @@ class ReminderEntriesController < ApplicationController
       @useroptions.push([name, project_member_id])
     end
 
-    @envoptions = Array.new
-    @envoptions.push(["Production", "production"])
-    @envoptions.push(["Development", "development"])
-    @envoptions.push(["Test", "test"])
-
     @project_tracker_ids = @project.trackers.collect{|u| u.id}
     @trackeroptions = Array.new
     @project_tracker_ids.each do |project_tracker_id|
@@ -44,7 +39,7 @@ class ReminderEntriesController < ApplicationController
     @reminder_entry = ReminderEntry.new(:project_id => @project.id,
                                         :tracker_id => tracker_id,
                                         :days => params[:reminder][:days],
-                                        :env => params[:reminder][:env])
+                                        :env => Rails.env)
 
     if @reminder_entry.save
       @reminder_users = Array.new

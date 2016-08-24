@@ -17,11 +17,6 @@
     </tr>
 
     <tr>
-      <th><%= f.label l(:reminder_environment) %></th>
-      <td><%= select :reminder, :env, options_for_select(@envoptions), {:include_blank => false}, {:multiple => false, :required => false} %></td>
-    </tr>
-
-    <tr>
       <th><%= f.label l(:reminder_users) %></th>
       <td><%= select :reminder, :users, options_for_select(@useroptions), {}, {:multiple => true, :required => false} %></td>
     </tr>
@@ -36,5 +31,4 @@
 <%= l(:reminder_options) %>
 <li><%= l(:reminder_option_tracker) %></li>
 <li><%= l(:reminder_option_days) %></li>
-<li><%= l(:reminder_option_environment) %></li>
 <li><%= l(:reminder_option_users) %></li>
