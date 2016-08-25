@@ -65,11 +65,15 @@ $ rm -rf plugins/reminderemails
 
 ## Contributions
 
-* Any pull requests to fix a bug are welcome.
+* Any pull requests to fix a bug or enhancement are welcome.
 * For further development, contact me to be added as a collaborator.
 
 ## Compatibility
 
 Plugin tested with `3.3.*` version of Redmine.
+
+## License
+
+redmine-reminder-emails is released under the GNU GENERAL PUBLIC LICENSE Version 3. See the bundled LICENSE file for details.
 
    [crontab]: <http://www.cyberciti.biz/faq/how-do-i-add-jobs-to-cron-under-linux-or-unix-oses/>
