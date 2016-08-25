@@ -34,7 +34,7 @@ $ <restart web server>
 ## Configuration
 
 * Activate `Reminder entries` module in project settings
-* Set `Rake path` in "Administration > Plugins > Reminder E-mails plugin configuration". This path must indicate your rake executable. You can learn its full path with `which rake`.
+* Set `Rake path` in "Administration > Plugins > Reminder E-mails plugin configuration". This path must indicate your rake executable. You can learn its full path with `which rake`. However if you are using RVM, please note that you should use rvm's wrappers to integrate with cron. Refs: [1](http://stackoverflow.com/a/25265172) [2](https://rvm.io/integration/cron)
 * Set `Reminder script path` in "Administration > Plugins > Reminder E-mails plugin configuration". This is the script file that used as a cron job. Even it does not exists, plugin will create a script at this location.
 * Set `Manage reminder entries` permission from "Administration > Roles and permissions".
 * Set cronjob for transmissions, after that restart cron daemon:
