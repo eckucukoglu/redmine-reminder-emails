@@ -1,0 +1,43 @@
+# Turkish strings sorted alphabetically wrt first letter.
+en:
+  button_delete: "Sil"
+  button_send_now: "Gönder"
+
+  link_back: "Geri"
+
+  mail_sent: "E-posta gönderildi."
+  mail_not_send: "E-posta gönderilemedi!"
+
+  reminder_menu_title: "Hatırlatıcı"
+  reminder_emails: "Hatırlatıcı e-postalar"
+  reminder_new: "Yeni hatırlatıcı"
+  reminder_set: "Hatırlatıcı kuruldu."
+  reminder_not_set: "Hatırlatıcı kurulamadı! Lütfen formu kontrol edin."
+  reminder_removed: "Hatırlatıcı silindi."
+  reminder_not_removed: "Hatırlatıcı silinemedi!"
+  reminder_not_exist: "Bu proje için hatırlatıcı bulunmamaktadır."
+  reminder_list: "Mevcut hatırlatıcılar:"
+  reminder_add: "Hatırlatıcı ekle"
+  reminder_settings: "Eklenti ayarları"
+  reminder_description: "Bu eklenti sayesinde, son günü geçmiş veya son gününe
+    belirtilen gün sayısı kalmış; atanmış ve aktif işler hakkında, hatırlatıcı
+    e-postalar gönderebilirsiniz."
+
+  reminder_options: "Mevcut seçenekler:"
+  reminder_option_tracker: "İş tipi: takip edilecek iş tipi (varsayılan olarak tüm iş tipleri seçilidir)"
+  reminder_option_days: "Gün sayısı: kaç gün kala bildirim yapılacağı"
+  reminder_option_users: "Kullanıcılar: hatırlatıcı gönderilecek kullanıcı listesi (varsayılan olarak herkese gönderilir)"
+
+  reminder_tracker: "İş tipi"
+  reminder_days: "Gün sayısı"
+  reminder_users: "Kullanıcılar"
+  reminder_actions: "Eylemler"
+
+  settings_rake_path: "Rake dizini:"
+  settings_script_path: "Hatırlatıcı programcık (script) dizini:"
+
+  user_all: "Tüm kullanıcılar"
+
+  tracker_all: "Tüm iş tipleri"
+
+  warning_delete: "Emin misiniz?"
