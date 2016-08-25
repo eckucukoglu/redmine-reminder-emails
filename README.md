@@ -1,4 +1,4 @@
-# Redmine Reminder e-mails Plugin
+# ![reminderemails](https://github.com/eckucukoglu/redmine-reminder-emails/blob/master/assets/images/icons/reminder-emails-64.png?raw=true) Redmine Reminder e-mails Plugin
 
 This plugin provides a ui for redmine:send_reminders rake tasks that send reminder emails about assigned and active issues that are past due or due in the next specified number of days.
 
@@ -14,7 +14,7 @@ Moreover;
  - reminder script path (created unless exists) should be set from plugin configurations.
  - reminder script also should be added to [crontab].
 
-# Features
+## Features
 
 * This is a project module (`Reminders` in project menu) with only one permission.
 * A permitted redmine user can add/remove a reminder that sends e-mail within a crontab interval, about his project.
