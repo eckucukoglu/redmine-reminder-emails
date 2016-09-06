@@ -1,0 +1,45 @@
+# German strings sorted alphabetically wrt first letter.
+de:
+  button_delete: "Löschen"
+  button_send_now: "Jetzt senden"
+
+  link_back: "Zurück"
+
+  mail_sent: "Email wurde gesendet."
+  mail_not_send: "Email konnte nicht gesendet werden."
+
+  reminder_menu_title: "Erinerrungen"
+  reminder_emails: "Email Erinnerungen"
+  reminder_new: "Neue Erinnerung"
+  reminder_set: "Erinnerung gespeichert."
+  reminder_not_set: "Die Erinnerung konnte nicht gespeichert werden. Bitte überprüfen Sie die Einstellungen."
+  reminder_removed: "Erinenerung gelöscht."
+  reminder_not_removed: "Erinerrung konnte nicht gelöscht werden."
+  reminder_not_exist: "Es gibt keine Erinnerungen in diesem Projekt."
+  reminder_list: "Dies sind die gesetzten Ernnerungen:"
+  reminder_add: "Erinnerung hinzufügen"
+  reminder_settings: "Plugin Einstellungen"
+  reminder_description: "This plugin offers a task that sends reminder emails
+    about assigned and active issues that are past due or due in the next
+    specified number of days."
+
+  reminder_options: "Wählbare Optionen:"
+  reminder_option_tracker: "Tracker: Beobachtete Tracker (Standard: Alle Tracker)"
+  reminder_option_days: "Tage: Anzahl der Tage zur Erinnerung"
+  reminder_option_environment: "Environment: Production ist Standard"
+  reminder_option_users: "Benutzter: Liste der Benutzter die Benachrichtigt werden (Standard: Alle Benutzter)"
+
+  reminder_tracker: "Tracker"
+  reminder_days: "Tage"
+  reminder_environment: "Environment"
+  reminder_users: "Benutzter"
+  reminder_actions: "Aktionen"
+
+  settings_rake_path: "Rake Pfad:"
+  settings_script_path: "Reminder Skript-Pfad:"
+
+  user_all: "Alle"
+
+  tracker_all: "Alle Tracker"
+
+  warning_delete: "Sind Sie sicher?"
