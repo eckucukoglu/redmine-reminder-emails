@@ -19,7 +19,7 @@ Moreover;
 * This is a project module (`Reminders` in project menu) with only one permission.
 * A permitted redmine user can add/remove a reminder that sends e-mail within a crontab interval, about his project.
 * User can change a tracker, and select users from that project.
-* User can also send an immidiate e-mails for any reminder entry.
+* User can also send an immediate e-mails for any reminder entry.
 
 ## Installation
 
