@@ -2,7 +2,7 @@
 
 This plugin provides a ui for redmine:send_reminders rake tasks that send reminder emails about assigned and active issues that are past due or due in the next specified number of days.
 
-Since crontab configuration can be managed by only server administrators, adding/removing reminder tasks can also be done only by administrators. With the help of this plugin, even a project member can set a reminder or send an immidiate e-mails. `Reminder script` is known by both crontab and redmine, therefore without reaching server, a permitted redmine user can change this script.
+Since crontab configuration can be managed by only server administrators, adding/removing reminder tasks can also be done only by administrators. With the help of this plugin, even a project member can set a reminder or send an immediate e-mails. `Reminder script` is known by both crontab and redmine, therefore without reaching server, a permitted redmine user can change this script.
 
 Available options:
  - Tracker: tracker to watch (defaults to all trackers)
