@@ -9,12 +9,11 @@ Redmine::Plugin.register :reminderemails do
   version '0.0.1'
   requires_redmine version_or_higher: '3.3.0'
 
-  settings({
+  settings(
      :partial => 'settings/reminderemails',
      :default => {
        'rake_path' => 'rake',
        'script_path' => 'script/redmine_due_reminder.sh'
-      }
   })
 
   menu :project_menu, :reminder_entries, { :controller => 'reminder_entries', :action => 'index' }, :caption => :reminder_menu_title, :before => :settings, :param => :project_id
