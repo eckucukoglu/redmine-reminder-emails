@@ -1,0 +1,47 @@
+# Lithuanian translations
+#   by Marius Žilėnas (m.zilenas@litrail.lt)
+
+lt:
+  button_delete: "Naikinti"
+  button_send_now: "Išsiųsti dabar"
+
+  link_back: "Grįžti"
+
+  mail_sent: "Laiškas išsiųstas."
+  mail_not_send: "Negali išsiųsti laiško!"
+
+  reminder_menu_title: "Priminimai"
+  reminder_emails: "Priminimų el. laiškai"
+  reminder_new: "Naujas priminimas"
+  reminder_set: "Priminimų rinkinys."
+  reminder_not_set: "Negali nustatyti priminimo! Prašau patikrinti formą."
+  reminder_removed: "Priminimas pašalintas."
+  reminder_not_removed: "Negali pašalinti priminimo!"
+  reminder_not_exist: "Projektas neturi priminimų."
+  reminder_list: "Tai yra dabartiniai priminimai:"
+  reminder_add: "Pridėti priminimą"
+  reminder_settings: "Įskiepio nuostatos"
+  reminder_description: "Įskiepies pateikia užduotį, kuri išsiunčia priminimo el. laiškus
+    apie paskirtus ir aktyvius darbus, kuriems pasibaigė laikas arba jis pasibaigs per sekantį 
+    nurodytą dienų skaičių."
+
+  reminder_options: "Galimos parinktys:"
+  reminder_option_tracker: "Pėdsekys: pėdsekys stebėti (numatyta \"Visi pėdsekiai\")"
+  reminder_option_days: "Dienos: skaičius dienų, apie kurias priminti"
+  reminder_option_environment: "Aplinka: numatyta \"gamybinė\""
+  reminder_option_users: "Naudotojai: sąrašas naudotojų, kuriems bus priminta (numatyta \"Kiekvienas naudotojas\""
+
+  reminder_tracker: "Pėdsekys"
+  reminder_days: "Dienos"
+  reminder_environment: "Aplinka"
+  reminder_users: "Naudotojai"
+  reminder_actions: "Veiksmai"
+
+  settings_rake_path: "Kelias iki rake:"
+  settings_script_path: "Kelias iki priminimo scenarijaus failo:"
+
+  user_all: "Kiekvienas"
+
+  tracker_all: "Visi pėdsekiai"
+
+  warning_delete: "Esate tikri?"
