@@ -21,7 +21,7 @@ lt:
   reminder_list: "Tai yra dabartiniai priminimai:"
   reminder_add: "Pridėti priminimą"
   reminder_settings: "Įskiepio nuostatos"
-  reminder_description: "Įskieies pateikia užduotį, kuri išsiunčia priminimo el. laiškus
+  reminder_description: "Įskiepis pateikia užduotį, kuri išsiunčia priminimo el. laiškus
     apie paskirtus ir aktyvius darbus, kuriems pasibaigė laikas arba jis pasibaigs per sekantį 
     nurodytą dienų skaičių."
 
