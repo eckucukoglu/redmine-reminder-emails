@@ -3,13 +3,11 @@ class ReminderEntriesController < ApplicationController
   before_filter :find_project_by_project_id ,:authorize
   include ReminderEntriesHelper
 
-  def index
-    @project = Project.find(params[:project_id])
+  def index    
     @reminder_entries = ReminderEntry.where(project_id: @project.id)
   end
 
-  def new
-    @project = Project.find(params[:project_id])
+  def new    
     @reminder_entry = ReminderEntry.new
 
     @project_member_ids = @project.users.collect{|u| u.id}
@@ -29,8 +27,7 @@ class ReminderEntriesController < ApplicationController
     end
   end
 
-  def create
-    @project = Project.find(params[:project_id])
+  def create    
     if params[:reminder][:tracker] == ""
       tracker_id = 0
     else
@@ -65,8 +62,7 @@ class ReminderEntriesController < ApplicationController
     end
   end
 
-  def destroy
-    @project = Project.find(params[:project_id])
+  def destroy    
     @reminder_entry = ReminderEntry.find(params[:id])
     @status = @reminder_entry.destroy
 
@@ -85,8 +81,7 @@ class ReminderEntriesController < ApplicationController
     end
   end
 
-  def send_now
-    @project = Project.find(params[:project_id])
+  def send_now    
     @reminder_entry = ReminderEntry.find(params[:reminder_entry_id])
 
     options = {}
