@@ -23,7 +23,7 @@ class ReminderEntriesController < ApplicationController
     @trackeroptions = Array.new
     @project_tracker_ids.each do |project_tracker_id|
       tracker = Tracker.find_by_id(project_tracker_id)
-      @trackeroptions.push([tracker.name, project_tracker_id])
+      @trackeroptions.push([l(tracker.name), project_tracker_id])
     end
   end
 
