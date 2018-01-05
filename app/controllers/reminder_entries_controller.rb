@@ -17,14 +17,8 @@ class ReminderEntriesController < ApplicationController
       user = User.find_by_id(project_member_id)
       name = user.firstname + " " + user.lastname
       @useroptions.push([name, project_member_id])
-    end
-
-    @project_tracker_ids = @project.trackers.collect{|u| u.id}
-    @trackeroptions = Array.new
-    @project_tracker_ids.each do |project_tracker_id|
-      tracker = Tracker.find_by_id(project_tracker_id)
-      @trackeroptions.push([l(tracker.name), project_tracker_id])
-    end
+    end    
+    @trackeroptions = Tracker.where(:id => @project.trackers.ids).pluck(:name, :id)
   end
 
   def create    
