@@ -28,13 +28,8 @@ class ReminderEntriesController < ApplicationController
   end
 
   def create    
-    if params[:reminder][:tracker] == ""
-      tracker_id = 0
-    else
-      tracker_id = params[:reminder][:tracker]
-    end
     @reminder_entry = ReminderEntry.new(:project_id => @project.id,
-                                        :tracker_id => tracker_id,
+                                        :tracker_id => params[:reminder][:tracker].blank? ? 0 : params[:reminder][:tracker],
                                         :days => params[:reminder][:days],
                                         :env => Rails.env)
 
