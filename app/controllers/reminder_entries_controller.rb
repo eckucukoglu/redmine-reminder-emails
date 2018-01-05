@@ -107,14 +107,13 @@ class ReminderEntriesController < ApplicationController
     content = "#!/bin/bash\n"
     content << "cd " + Rails.root.to_s + "\n"
     rake_content = Setting['plugin_reminderemails']['rake_path'] + " redmine:send_reminders "
-
-    reminder_entries = ReminderEntry.all
-    reminder_entries.each do |reminder_entry|
+    
+    ReminderEntry.find_each do |reminder_entry|
       content << rake_content
       content << generateReminderOptions(reminder_entry)
       content << "\n"
     end
-
+    
     return content
   end
 
