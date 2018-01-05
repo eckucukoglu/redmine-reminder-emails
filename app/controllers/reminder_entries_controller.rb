@@ -108,10 +108,10 @@ class ReminderEntriesController < ApplicationController
 
   private
   def forceUpdateScript
-    reminder_script = File.open(Setting['plugin_reminderemails']['script_path'], "w")
+    File.atomic_write(Setting['plugin_reminderemails']['script_path']) do |reminder_script|
+      reminder_script.write(generateScriptContent)
+    end
     File.chmod(0775, Setting['plugin_reminderemails']['script_path'])
-    reminder_script.write(generateScriptContent)
-    reminder_script.close
   end
 
   def generateScriptContent
@@ -125,7 +125,7 @@ class ReminderEntriesController < ApplicationController
       content << generateReminderOptions(reminder_entry)
       content << "\n"
     end
-
+    
     return content
   end
 
