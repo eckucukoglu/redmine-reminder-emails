@@ -21,16 +21,9 @@ module ReminderEntriesHelper
   end
 
   def getReminderTrackerName(tracker_id)
-    if tracker_id == 0
-      return l(:tracker_all)
-    end
-
-    tracker = Tracker.find_by_id(tracker_id)
-    if tracker != nil
-      return tracker.name
-    else
-      return ("#" + tracker_id.to_s)
-    end
+    tracker_id == 0 ? l(:tracker_all) : Tracker.find(tracker_id).name
+  rescue ActiveRecord::RecordNotFound
+    "##{tracker_id}"
   end
 
 end
