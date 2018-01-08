@@ -25,7 +25,7 @@ module ReminderEntriesHelper
       return l(:tracker_all)
     end
 
-    tracker = Tracker.find_by_id(tracker_id)
+    tracker = Tracker.find(tracker_id)
     if tracker != nil
       return tracker.name
     else
