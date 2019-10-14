@@ -1,4 +1,4 @@
-class CreateReminderUsers < ActiveRecord::Migration
+class CreateReminderUsers < ActiveRecord::Migration[4.2]
   def change
     create_table :reminder_users do |t|
       t.references :reminder_entry, null: false
